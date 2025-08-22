@@ -109,7 +109,7 @@ def handle_click():
     # --------------------------------------------- 
     # Example usage: 
     # Suppose you have 'prices_df' loaded: rows = dates, columns = stock symbols 
-    prices_df = pd.read_csv('nifty50_closing_prices.csv', index_col=0, parse_dates=True) 
+    prices_df = pd.read_csv('../csv_files/nifty50_closing_prices.csv', index_col=0, parse_dates=True) 
     trades = run_nifty_shop(prices_df) 
     st.write(trades)
     # print(trades) 
