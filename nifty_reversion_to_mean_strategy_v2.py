@@ -5,6 +5,17 @@ import streamlit as st
 
 st.header('Nifty “Reversion to Mean” Strategy')
 
+if "show_section" not in st.session_state:
+    st.session_state.show_section = "None"
+
+col1, col2 = st.columns(2)
+with col1:
+    if st.button("Click me! Show Result"):
+        st.session_state.show_section = "A"
+# with col2:
+#     if st.button("Show Section B"):
+#         st.session_state.show_section = "B"
+
 # ---- CONFIGURATION ---- # 
 LOT_SIZE_CASH = int(st.sidebar.text_input('LOT SIZE CASH', '5000'))    # Rs per lot per buy trigger 
 PROFIT_TARGET =int(st.sidebar.text_input('PROFIT TARGET', '5'))/100    # 5% above average buy price to trigger sell 
@@ -115,6 +126,8 @@ def handle_click():
     # print(trades) 
     # ---------------------------------------------
 
-st.button("Click me! Show Result", on_click=handle_click)
+# st.button("Click me! Show Result", on_click=handle_click)
 # Add a horizontal line below the content
-st.markdown("---")
+
+if st.session_state.show_section == "A":
+    handle_click()
