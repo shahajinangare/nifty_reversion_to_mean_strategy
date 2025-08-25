@@ -1,4 +1,3 @@
-import yfinance as yf
 from nifty.service import ClosingPricesService
 from nifty.strategy.reversiontomean import ReversionToMean
 import streamlit as st
