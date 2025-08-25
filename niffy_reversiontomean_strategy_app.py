@@ -1,6 +1,3 @@
-import pandas as pd 
-import numpy as np 
-from collections import defaultdict 
 from nifty.service import ClosingPricesService
 from nifty.strategy.reversiontomean import ReversionToMean
 import streamlit as st
